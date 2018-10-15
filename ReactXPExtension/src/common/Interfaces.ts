@@ -13,10 +13,11 @@ import * as RX from 'reactxp';
 import * as Types from './Types';
 
 export abstract class Video extends RX.Component<Types.VideoProps, any> {
-    abstract seek(position: number): void;
-    abstract play(): void;
-    abstract pause(): void;
-    abstract mute(muted: boolean): void;
+    // abstract setText(text: string): void;
+    // abstract seek(position: number): void;
+    // abstract play(): void;
+    // abstract pause(): void;
+    // abstract mute(muted: boolean): void;
 }
 
 export interface PluginInterface {
