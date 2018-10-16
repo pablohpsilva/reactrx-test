@@ -9,6 +9,14 @@ const WEB_PATH = path.join(ROOT_PATH, 'web');
 const TS_CONFIG_PATH = path.join(ROOT_PATH, 'web', 'tsconfig.json');
 const TSLINT_CONFIG_PATH = path.join(ROOT_PATH, 'tslint.json');
 
+const mapToFolder = (dependencies, folder) =>
+  dependencies.reduce((acc, dependency) => {
+    return {
+      [dependency]: path.resolve(`${folder}/${dependency}`),
+      ...acc
+    }
+  }, {});
+
 const buildConfig = (env, argv) => ({
   entry: APP_PATH,
   output: {
@@ -18,6 +26,9 @@ const buildConfig = (env, argv) => ({
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
+    alias: {
+      ...mapToFolder(['react', 'react-dom'], './node_modules')
+    }
   },
 
   module: {

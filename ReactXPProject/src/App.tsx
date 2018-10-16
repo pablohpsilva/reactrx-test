@@ -1,4 +1,5 @@
 import * as RX from 'reactxp';
+import RXVideo from 'reactxp-video';
 
 const _styles = {
   main: RX.Styles.createViewStyle({
@@ -42,17 +43,20 @@ const _styles = {
 export class App extends RX.Component {
   public render() {
     return (
-      <RX.View style={ _styles.main }>
+      <RX.View style={_styles.main}>
         <RX.View>
-          <RX.Text style={ _styles.title }>Welcome to <RX.Text style={ _styles.name }>ReactXP</RX.Text></RX.Text>
-          <RX.Text style={ _styles.label }>To get started, edit /src/App.tsx</RX.Text>
+          <RX.Text style={_styles.title}>Welcome to <RX.Text style={_styles.name}>ReactXP</RX.Text></RX.Text>
+          <RX.Text style={_styles.label}>To get started, edit /src/App.tsx</RX.Text>
+          <RXVideo
+            text={'https://www.w3schools.com/html/mov_bbb.mp4'}
+          />
         </RX.View>
 
-        <RX.View style={ _styles.links }>
-          <RX.Link url={ 'https://github.com/Microsoft/reactxp' } style={ _styles.link }>GitHub</RX.Link>
-          <RX.Link url={ 'https://microsoft.github.io/reactxp' } style={ _styles.link }>Docs</RX.Link>
-          <RX.Link url={ 'https://github.com/Microsoft/reactxp/tree/master/samples' } style={ _styles.link }>Samples</RX.Link>
-          <RX.Link url={ 'https://github.com/Microsoft/reactxp/tree/master/extensions' } style={ _styles.link }>Extensions</RX.Link>
+        <RX.View style={_styles.links}>
+          <RX.Link url={'https://github.com/Microsoft/reactxp'} style={_styles.link}>GitHub</RX.Link>
+          <RX.Link url={'https://microsoft.github.io/reactxp'} style={_styles.link}>Docs</RX.Link>
+          <RX.Link url={'https://github.com/Microsoft/reactxp/tree/master/samples'} style={_styles.link}>Samples</RX.Link>
+          <RX.Link url={'https://github.com/Microsoft/reactxp/tree/master/extensions'} style={_styles.link}>Extensions</RX.Link>
         </RX.View>
       </RX.View>
     );
